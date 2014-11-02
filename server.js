@@ -115,13 +115,20 @@ io.sockets.on('connection', function (client) {
     // the process is described in draft-uberti-behave-turn-rest
     var credentials = [];
     config.turnservers.forEach(function (server) {
-        var hmac = crypto.createHmac('sha1', server.secret);
         // default to 86400 seconds timeout unless specified
-        var username = Math.floor(new Date().getTime() / 1000) + (server.expiry || 86400) + "";
-        hmac.update(username);
+        var username = server.username
+          , credential = server.credential
+        ;
+        if (!username) {
+          var hmac = crypto.createHmac('sha1', server.secret);
+          Math.floor(new Date().getTime() / 1000) + (server.expiry || 86400) + "";
+          hmac.update(username);
+          credential = hmac.digest('base64');
+        }
+        
         credentials.push({
             username: username,
-            credential: hmac.digest('base64'),
+            credential: credential,
             url: server.url
         });
     });
