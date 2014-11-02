@@ -17,11 +17,13 @@
         {url:'stun:stun.schlund.de'}*/
     ],
     "turnservers" : [
+        /*
         {
           url: 'turn:numb.viagenie.ca',
           credential: 'muazkh',
           username: 'webrtc@live.com'
         }
+        */
         /*
         { "url": "turn:your.turn.server.here",
           "secret": "turnserversharedsecret"
