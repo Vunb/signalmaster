@@ -2,7 +2,7 @@
     "isDev": true,
     "logLevel": 3,
     "server": {
-        "port": 8888
+        "port": 9005
     },
     "stunservers" : [
         {url:'stun:stun.l.google.com:19302'},
@@ -17,17 +17,15 @@
         {url:'stun:stun.schlund.de'}*/
     ],
     "turnservers" : [
-        /*
         {
           url: 'turn:numb.viagenie.ca',
           credential: 'muazkh',
           username: 'webrtc@live.com'
         }
-        */
         /*
         { "url": "turn:your.turn.server.here",
           "secret": "turnserversharedsecret"
-          "expiry": 86400 
+          "expiry": 86400
         }
         */
     ]

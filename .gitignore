@@ -1,2 +1,5 @@
 .DS_Store
+process.pid
+room43master.pid
 node_modules
+logs/*
